@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AutoModel>
+
+@{
+    ViewData["Title"] = "Model of Mark";
+}
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>MarkName</th>
+            <th>Model Id in Database</th>
+            <th>Model Name</th>
+            @*<th>Update</th>
+                <th>Delete</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>
+                    <a id="auto-wrapper" asp-controller="Home" asp-action="Get_Auto" asp-route-id="@r.ID">
+                        ID: @r.ID
+                    </a>
+                </td>
+                <td><span> @r.Make_Name</span></td>
+                <td><span> @r.Model_ID</span></td>
+                <td><span> @r.Model_Name</span></td>
+            </tr>
+            @*<td>
+                    <a asp-action="Update" asp-route-id="@r.Make_ID">
+                    </a>
+                </td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" value="@r.Make_ID" name="ID" />
+                    </form>
+                </td>*@
+        }
+    </tbody>
+</table>

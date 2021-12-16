@@ -1,0 +1,28 @@
+﻿@model AutoInfo
+@{
+    ViewData["Title"] = "Иформация про выбранное авто"; }
+<h1>@ViewData["Title"]</h1>
+<div>
+    <hr />
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>GroupName</th>
+                <th>INFO</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr id="auto-wrapper">
+                    <td>@Model.ID" </td>
+                    <td>@Model.Name</td>
+                    <td>@Model.GroupName</td>
+                    <td>@Model.Description</td>
+                    
+                </tr>
+            
+        </tbody>
+    </table>
+</div>

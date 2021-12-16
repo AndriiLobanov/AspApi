@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Auto>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+<a asp-action="GetByName" class="btn btn-sm btn-secondary">Get Auto</a>
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>MarkName</th>
+            @*<th>Update</th>
+                <th>Delete</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>
+                    <a id="auto-wrapper" asp-controller="Home" asp-action="ModelAuto" asp-route-Make_ID="@r.Make_ID">
+                        <span>@r.Make_ID</span>
+                    </a>
+                </td>
+                <td><span> @r.Make_Name</span></td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
